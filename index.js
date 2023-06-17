@@ -9,12 +9,7 @@ const router = require("./router")
 
 const app = express()
 const server = http.createServer(app);
-const io = socketio(server, {
-    cors: {
-        origin: "https://fanciful-lamington-29e50e.netlify.app/",
-        methods: ["GET", "POST"]
-    }
-});
+const io = socketio(server);
 
 app.use(cors());
 app.use(router);
